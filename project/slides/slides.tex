@@ -1,0 +1,122 @@
+\documentclass{beamer}
+\mode<presentation>
+{
+  \usetheme{default}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+} 
+
+
+\usepackage{custom}
+\usepackage[autostyle]{csquotes}
+%\usepackage[style=footnote-dw, citecounter=true, backend=bibtex]{biblatex}
+%\bibliography{refs.bib}
+
+
+\let\oldfootnotesize\footnotesize
+\renewcommand*{\footnotesize}{\oldfootnotesize\tiny}
+
+\addtobeamertemplate{navigation symbols}{}{%
+    \usebeamerfont{footline}%
+    \usebeamercolor[fg]{footline}%
+    \hspace{1em}%
+    \insertframenumber/\inserttotalframenumber
+}
+
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Outline}
+    \tableofcontents[currentsection, hideothersubsections, 
+    %sectionstyle=show/hide
+    ]
+  \end{frame}
+}
+
+
+
+
+
+
+\title[]{}
+\author[]{}
+\institute{}
+
+\begin{document}
+ 
+ 
+
+\begin{frame}
+  \titlepage
+  
+\end{frame}
+
+
+ 
+
+ 
+ 
+ 
+
+ 
+ 
+
+\begin{frame}{Thank You}
+  \begin{center}
+    \begin{huge}
+      Questions?
+    \end{huge}
+  \end{center}
+  \vspace{40pt}
+  Contact:\\
+  
+\end{frame}
+
+
+ 
+
+\end{document}
+
+
+
+
+
+
+
+%  useful code
+ 
+ 
+
+\begin{frame}{Table of contents}
+  \setbeamertemplate{section in toc}[sections numbered]
+  \tableofcontents[hideallsubsections]
+\end{frame}
+
+
+
+
+ \begin{figure}[!h]
+\centering
+\resizebox{.9\columnwidth}{!}{
+ \input{./images/.pgf}
+}
+\caption{}
+\label{fig:}
+\end{figure}
+
+
+
+
+
+ 
+ \begin{frame}
+  \frametitle{}
+  
+  
+ \end{frame}
+
+
+

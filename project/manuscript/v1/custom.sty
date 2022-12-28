@@ -1,0 +1,131 @@
+% Custom packages
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{custom}[2017/06/06 Custom Package]
+
+% graphics
+\RequirePackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usetikzlibrary{plotmarks}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{shapes}
+\usepgfplotslibrary{patchplots}
+\RequirePackage{grffile}
+\RequirePackage{tikzscale}
+\RequirePackage{tikz}
+\usetikzlibrary{arrows,positioning} 
+\RequirePackage{graphicx}
+\RequirePackage{epsfig}
+\RequirePackage{caption}
+\RequirePackage{subcaption}
+\captionsetup{compatibility=false}
+\RequirePackage{float} 
+\RequirePackage{array}
+\RequirePackage{rotating}
+\RequirePackage{varwidth}
+
+% text
+\RequirePackage{multicol}
+\RequirePackage{multirow}
+%\RequirePackage{footnote}
+% make last page aligned at the bottom
+\RequirePackage{flushend}
+%\RequirePackage{cite}
+\RequirePackage{url}
+\RequirePackage{color}
+\RequirePackage{ctable}
+\RequirePackage{booktabs}
+%\renewcommand{\arraystretch}{1.2}
+\RequirePackage[hypertexnames=false]{hyperref}
+
+% fonts
+\RequirePackage[english]{babel}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{anyfontsize}
+\RequirePackage{amsfonts}
+\RequirePackage{bbm}
+\RequirePackage{dsfont}
+\RequirePackage{microtype} 
+ 
+% math 
+\RequirePackage{amsmath}
+\RequirePackage{amsthm}
+\RequirePackage{amssymb}
+\RequirePackage{mathrsfs} 
+\RequirePackage{xfrac}
+\RequirePackage{algorithmic}
+\RequirePackage[capitalise]{cleveref}
+\RequirePackage{autonum}
+
+
+
+
+
+% useful for reviewing manuscripts
+\newif\ifcustom@review
+\DeclareOption{review}{
+  \custom@reviewtrue
+}
+\DeclareOption{noreview}{
+  \custom@reviewfalse
+}
+
+
+\ExecuteOptions{noreview}
+
+
+\newif\if@mathdef\@mathdeffalse
+\DeclareOption{mathdef}{
+  \@mathdeftrue
+}
+
+
+\ProcessOptions\relax
+
+
+\ifcustom@review
+  \newcommand{\modification}[1]{{\leavevmode\color{blue} #1 }}
+\else
+  \newcommand{\modification}[1]{{\leavevmode\color{black} #1 }}
+\fi
+
+
+\if@mathdef
+  % math environments
+  \newtheorem{theorem}{Theorem}
+  \newtheorem{lemma}{Lemma}
+  \newtheorem{proposition}{Proposition}
+  \newtheorem{corollary}{Corollary}
+  \newtheorem{definition}{Definition}
+  \newtheorem{remark}{Remark}
+  %\theoremstyle{definition}
+  \newtheorem{assumptionletter}{Assumption}
+  \renewcommand{\theassumptionletter}{\arabic{assumptionletter}}
+  %\theoremstyle{definition}
+  \newtheorem{example}{Example}
+  %\renewcommand{\labelenumi}{\roman{enumi}.}
+\fi
+
+
+
+
+
+% personal symbols
+\def\th{^{th}}
+\DeclareMathOperator*{\argmin}{\arg\,\min \,}
+\DeclareMathOperator*{\argmax}{\arg\,\max \,}
+\def\Inf{\operatornamewithlimits{inf\vphantom{p}}}
+\newcommand{\sgn}{\text{sgn}}
+\newcommand{\diag}{\mathop{\mathrm{diag}}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\bs}[1]{\boldsymbol{#1}}
+\newcommand{\slfrac}[2]{\left.#1\middle/#2\right.}
+
+% statistics
+\newcommand{\Prob}{\mathrm{P}}
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+
+
+
+\endinput
+
